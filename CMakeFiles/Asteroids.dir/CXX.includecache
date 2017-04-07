@@ -1,0 +1,38 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/joao/Downloads/PDI/example_code_02/src/Objects.hpp
+iostream
+-
+GL/glut.h
+-
+glm/glm.hpp
+-
+glm/gtc/type_ptr.hpp
+-
+glm/gtx/string_cast.hpp
+-
+glm/gtc/matrix_transform.hpp
+-
+glm/gtc/type_ptr.hpp
+-
+glm/gtx/transform.hpp
+-
+
+/home/joao/Downloads/PDI/example_code_02/src/Player.cpp
+stdlib.h
+-
+stdio.h
+-
+Player.hpp
+/home/joao/Downloads/PDI/example_code_02/src/Player.hpp
+
+/home/joao/Downloads/PDI/example_code_02/src/Player.hpp
+Objects.hpp
+/home/joao/Downloads/PDI/example_code_02/src/Objects.hpp
+

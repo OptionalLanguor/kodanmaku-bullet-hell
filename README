@@ -1,0 +1,17 @@
+#Install the following packages:
+
+sudo apt-get install libxmu-dev libxi-dev
+
+
+#Generate makefile by cmake
+
+cmake .
+
+# Compile:
+
+make
+
+it's all!
+
+
+
