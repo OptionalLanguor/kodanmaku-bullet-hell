@@ -1,0 +1,23 @@
+CMakeCache.txt
+CMakeFiles
+CMakeScripts
+Testing
+Makefile
+cmake_install.cmake
+install_manifest.txt
+compile_commands.json
+CTestTestfile.cmake
+
+# Debug files
+log.txt
+output.txt
+
+# Compiled object files
+*.o
+
+# Executables
+*.a
+*.exe
+*.out
+*.app
+
