@@ -1,5 +1,5 @@
 #################################################
-# Projeto Asteroids
+# Kodanmaku - Bullet Hell Game
 #################################################
 
 project(Asteroids)
@@ -7,6 +7,7 @@ cmake_minimum_required(VERSION 2.8)
 
 ################################################################################
 # COMPILER
+
 include(CheckCXXCompilerFlag)
 CHECK_CXX_COMPILER_FLAG("-std=c++11" COMPILER_SUPPORTS_CXX11)
 CHECK_CXX_COMPILER_FLAG("-std=c++0x" COMPILER_SUPPORTS_CXX0X)
@@ -15,17 +16,16 @@ if(COMPILER_SUPPORTS_CXX11)
 elseif(COMPILER_SUPPORTS_CXX0X)
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++0x")
 else()
-        message(STATUS "The compiler ${CMAKE_CXX_COMPILER} has no C++11 support. Please use a different C++ compiler.")
+    message(STATUS "The compiler ${CMAKE_CXX_COMPILER} has no C++11 support. Please use a different C++ compiler.")
 endif()
-
 
 ################################################################################
 # CMake variables
-set(${PROJECT_NAME}_ROOT_DIR         ${CMAKE_SOURCE_DIR})
 
-SET(CMAKE_MODULE_PATH                ${${PROJECT_NAME}_ROOT_DIR}/cmake)
-SET(CMAKE_CURRENT_BINARY_DIR            ${${PROJECT_NAME}_ROOT_DIR}/build)
-SET(CMAKE_INSTALL_PREFIX             ${${PROJECT_NAME}_ROOT_DIR}/bin)
+set(${PROJECT_NAME}_ROOT_DIR  	${CMAKE_SOURCE_DIR})
+SET(CMAKE_MODULE_PATH         	${${PROJECT_NAME}_ROOT_DIR}/cmake)
+SET(CMAKE_CURRENT_BINARY_DIR	${${PROJECT_NAME}_ROOT_DIR}/build)
+SET(CMAKE_INSTALL_PREFIX      	${${PROJECT_NAME}_ROOT_DIR}/bin)
 
 ################################################################################
 # OpenGL
@@ -53,11 +53,11 @@ if(NOT GLUT_FOUND)
         message(Error "GLUT not found")
 endif(NOT GLUT_FOUND)
 
-
 ################################################################################
 # GLM
 
 find_package(GLM REQUIRED)
+
 include_directories(${GLM_INCLUDE_DIRS})
 link_directories(${GLM_LIBRARY_DIRS})
 add_definitions(${GLM_DEFINITIONS})
@@ -66,18 +66,16 @@ if(NOT GLM_FOUND)
         message(Error "GLM not found")
 endif(NOT GLM_FOUND)
 
-
 ################################################################################
 # FILES
+
 set(HDRS
     src/Application.hpp
     src/Objects.hpp
     src/Player.hpp
 )
 
-
 set(SRCS
-    
     src/main.cpp
     src/Application.cpp
     src/Objects.cpp
@@ -86,40 +84,20 @@ set(SRCS
 
 ################################################################################
 # EXEC
+
 add_executable(${PROJECT_NAME} ${HDRS} ${SRCS})
 
-
-
-
 # LIBS
+
 set(LIBS
-    ${OPENGL_LIBRARIES} 
+    ${OPENGL_LIBRARIES}
     ${GLUT_LIBRARIES}
     ${GLM_LIBRARIES}
-    
 )
 
 # LINK
+
 target_link_libraries(${PROJECT_NAME} ${LIBS})
 
 
 #Install
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
