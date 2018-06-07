@@ -8,6 +8,9 @@ install_manifest.txt
 compile_commands.json
 CTestTestfile.cmake
 
+# Temporary files
+*~
+
 # Debug files
 log.txt
 output.txt
