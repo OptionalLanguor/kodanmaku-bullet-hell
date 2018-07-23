@@ -16,9 +16,9 @@
 #
 # POSSIBLE ISSUES:
 #
-# 		1. Not sure if the necessary packages for X are included on the image.
+# 	1. Not sure if the necessary packages for X are included on the image.
 #
-#		2. Commands to get user ip for xserver on linux. (For windows: "ipconfig | grep IPv4 | grep '192.168' | cut -c 40-".)
+#	2. Commands to get user ip for xserver on linux. (For windows: "ipconfig | grep IPv4 | grep '192.168' | cut -c 40-".)
 #
 
 FROM ubuntu:16.04
