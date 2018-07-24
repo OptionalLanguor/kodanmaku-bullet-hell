@@ -2,8 +2,11 @@
 # AUTHORS: Felipe Tavares <felmt@hotmail.com>
 # USAGE:
 #	
-# 	# Build opengl-glut image
+#	# Build opengl-glut image
 #		docker build -t opengl-glut:1 -f Dockerfile .
+#
+#	# On windows set DISPLAY var on powershell (change your IP address)
+#		set-variable -name DISPLAY -value 192.168.15.89:0.0
 #
 #	# Run the container and mount the local settings and your code
 #		docker create \
@@ -12,11 +15,12 @@
 #			--name opengl-glut \
 #			--hostname kagami \
 #			--env DISPLAY=$DISPLAY \
+#			-v /tmp/.X11-unix:/tmp/.X11.unix \
 #			opengl-glut:1
 #
 # POSSIBLE ISSUES:
 #
-# 	1. Not sure if the necessary packages for X are included on the image.
+#	1. Not sure if the necessary packages for X are included on the image.
 #
 #	2. Commands to get user ip for xserver on linux. (For windows: "ipconfig | grep IPv4 | grep '192.168' | cut -c 40-".)
 #
