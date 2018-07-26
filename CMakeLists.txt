@@ -71,15 +71,19 @@ endif(NOT GLM_FOUND)
 
 set(HDRS
     src/Application.hpp
+    src/Bala.hpp
     src/Objects.hpp
     src/Player.hpp
+    src/Inimigo.hpp
 )
 
 set(SRCS
     src/main.cpp
     src/Application.cpp
+    src/Bala.cpp
     src/Objects.cpp
     src/Player.cpp
+    src/Inimigo.cpp
 )
 
 ################################################################################
