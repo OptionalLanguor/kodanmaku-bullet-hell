@@ -59,11 +59,11 @@ endif(NOT GLUT_FOUND)
 find_package(GLM REQUIRED)
 
 include_directories(${GLM_INCLUDE_DIRS})
-link_directories(${GLM_LIBRARY_DIRS})
-add_definitions(${GLM_DEFINITIONS})
+# link_directories(${GLM_LIBRARY_DIRS})
+# add_definitions(${GLM_DEFINITIONS})
 
 if(NOT GLM_FOUND)
-        message(Error "GLM not found")
+         message(Error "GLM not found")
 endif(NOT GLM_FOUND)
 
 ################################################################################

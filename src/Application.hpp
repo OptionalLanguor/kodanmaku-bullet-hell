@@ -34,7 +34,7 @@ public:
 private:
 
 	int time;
-	
+
 
 	GLfloat xf;
 	GLfloat yf;
@@ -47,6 +47,6 @@ private:
 private:
 	void Inicializa (void);
 	bool insert_object(void);
-	
+
 };
 

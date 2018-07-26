@@ -19,8 +19,8 @@ void MouseHandle(int button, int state, int x, int y){ptr_->MouseHandle(button, 
 void SpecialKeyHandle(int key, int x, int y){ptr_->SpecialKeyHandle(key, x, y);}
 void update(int value){ptr_->update(value,&update);}
 
-     
-// Programa Principal 
+
+// Programa Principal
 int main(int argc, char** argv)
 {
      int time=0;
@@ -32,7 +32,7 @@ int main(int argc, char** argv)
      glutReshapeFunc(resize);
      glutKeyboardFunc(KeyboardHandle);
      glutMouseFunc(MouseHandle);
-     glutSpecialFunc(SpecialKeyHandle); 
+     glutSpecialFunc(SpecialKeyHandle);
      glutTimerFunc(30,update,time);
      glutMainLoop();
 
