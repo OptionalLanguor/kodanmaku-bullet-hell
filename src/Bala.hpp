@@ -1,8 +1,8 @@
 #include "Objects.hpp"
 
-class Bala public Objects
+class Bala: public Objects
 {
-public:	
+public:
 	Bala();
 	~Bala();
 

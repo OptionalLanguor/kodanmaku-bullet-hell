@@ -1,8 +1,8 @@
 #include "Objects.hpp"
 
-class Inimigo public Objects
+class Inimigo: public Objects
 {
-public:	
+public:
 	Inimigo();
 	~Inimigo();
 

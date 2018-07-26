@@ -1,4 +1,4 @@
-// Jogo Asteroids 
+// Jogo Asteroids
 // application.cpp
 // Prof. Giovani Bernardes Vitor
 // ECO034 - 2017
@@ -13,8 +13,8 @@
 Application::Application(int argc, char** argv)
 {
 	int n = 3;
-	cout << " TABULEIRO " << n << "x" << n << endl; 
-	
+	cout << " TABULEIRO " << n << "x" << n << endl;
+
 	insert_object();
 
 	glutInit(&argc,argv);
@@ -31,7 +31,7 @@ Application::~Application()
 }
 //---------------------------------------------------------------------
 void Application::Inicializa (void)
-{   
+{
     // Define a cor de fundo da janela de visualização como preta
     glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
     xf=50.0f;
@@ -51,7 +51,7 @@ void Application::draw()
 {
      glMatrixMode(GL_MODELVIEW);
      glLoadIdentity();
-                   
+
      glClear(GL_COLOR_BUFFER_BIT);
 
 
@@ -65,11 +65,11 @@ void Application::draw()
 
 //---------------------------------------------------------------------
 void Application::resize(GLsizei w, GLsizei h)
-{ 
+{
     // Especifica as dimensões da Viewport
     glViewport(0, 0, w, h);
     view_w = w;
-    view_h = h;                   
+    view_h = h;
 
     // Inicializa o sistema de coordenadas
     glMatrixMode(GL_PROJECTION);
@@ -82,7 +82,7 @@ void Application::resize(GLsizei w, GLsizei h)
 void Application::KeyboardHandle(unsigned char key, int x, int y)
 {
     switch (key) {
-            case 'R': 
+            case 'R':
             case 'r':// muda a cor corrente para vermelho
                      glColor3f(1.0f, 0.0f, 0.0f);
                      break;
@@ -105,13 +105,13 @@ void Application::KeyboardHandle(unsigned char key, int x, int y)
     }
     //glutPostRedisplay();
 }
-        
+
 //---------------------------------------------------------------------
 void Application::MouseHandle(int button, int state, int x, int y)
 {
     if (button == GLUT_LEFT_BUTTON)
          if (state == GLUT_DOWN) {
-                  // Troca o tamanho do retângulo, que vai do centro da 
+                  // Troca o tamanho do retângulo, que vai do centro da
                   // janela até a posição onde o usuário clicou com o mouse
                   //xf = ( (2 * win * x) / view_w) - win;
                   //yf = ( ( (2 * win) * (y-view_h) ) / -view_h) - win;
@@ -130,13 +130,13 @@ void Application::SpecialKeyHandle(int key, int x, int y)
 void Application::update(int value, void (*func_ptr)(int))
 {
 	//time++;
-	//std::cout << " Time: " << time << std::endl; 
-	
+	//std::cout << " Time: " << time << std::endl;
+
 	//angle+=2.0f;
 
 	//if(angle>360.f)
 	//  angle-=360;
-	
+
 
 	glutPostRedisplay();
 	glutTimerFunc(30,func_ptr,time);
@@ -150,7 +150,7 @@ bool Application::insert_object(void)
 	list_.push_back(new Player());
 	list_.push_back(new Inimigo());
 	list_.push_back(new Bala());
-	std::cout << " insert: " << list_.size() << std::endl; 
+	std::cout << " insert: " << list_.size() << std::endl;
 
 	return true;
 }
