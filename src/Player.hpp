@@ -15,21 +15,32 @@ public:
 	~Player();
 
 	void draw();
-	void update(int key);
-	void colision(int x, int y);
+	void update();
+	bool colision(double x, double y, double size);
+	void fire(double x, double y);
+	void move(char way);
+	double getX();
+	double getY();
+	char getTipo();
+	int getLimiteTiro();
+	double getSize();
+	void printPosic();
+	int getTipoEstrutura();
 
 private:
 	glm::vec3 points_base[3];
 	glm::vec3 points[3];
-
-private:
-	void transform(void);
-
-/////
- private:
-	//std::pair<double, double> center, vert1, vert2, vert3;
+	glm::vec3 hitboxQuad_base[4];
+	glm::vec3 hitboxQuad[4];
+	
 	double x, y, movement, theta; //**points;
+	
+	char tipo;
+	int limiteTiro;
+	int tipoEstrutura;
+	int life;
 
+	void transform(void);
 };
 
 
