@@ -29,19 +29,20 @@ FROM ubuntu:16.04
 
 # System upgrade and basic packages
 
-RUN apt-get update \
-	&& apt-get -y full-upgrade \
-	&& apt-get install -y \
-		--no-install-recommends \
+RUN apt-get update && apt-get -y full-upgrade && \
+	apt-get install -y --no-install-recommends \
 		build-essential \
+		cmake \
 		freeglut3-dev \
 		git \
 		libglm-dev \
+		libxmu-dev \
+		libxi-dev \
 		mesa-utils \
 		sudo \
-		ssh \
-	&& apt-get clean \
-	&& rm -rf /var/lib/apt/lists/*
+		ssh && \
+	apt-get clean
+#	&& rm -rf /var/lib/apt/lists/*
 
 # Generate system-wide UTF-8 locale
 
