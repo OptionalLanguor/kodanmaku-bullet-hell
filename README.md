@@ -6,9 +6,9 @@ sudo apt-get install \
 	build-essential \
 	freeglut3-dev \
 	libglm-dev \
-	mesa-utils
-	# libxmu-dev
-	# libxi-dev
+	libxmu-dev \
+	libxi-dev \
+	mesa-utils \
 
 ```
 
@@ -16,12 +16,14 @@ sudo apt-get install \
 
 ```sh
 cmake .
+
 ```
 
 # Compile:
 
 ```sh
 make
+
 ```
 
 It's all!
